@@ -1,0 +1,56 @@
+.card {
+    display: inline-block;
+    background-color: rgba(80, 80, 80, 0.4);
+    backdrop-filter: blur(2px);
+    color: white;
+    width: 12rem;
+    height: 20rem;
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    position: absolute;
+    /* transition animation */
+    transition: transform 1s;
+}
+
+/* make the cards be positioned skew */
+.card:nth-child(1) {
+    transform: rotateX(-30deg) rotateY(20deg) translateY(20px) translateX(20px);
+}
+.card:nth-child(2) {
+    transform: rotateX(-30deg) rotateY(20deg) translateY(40px) translateX(40px);
+}
+.card:nth-child(3) {
+    transform: rotateX(-30deg) rotateY(20deg) translateY(60px) translateX(60px);
+}
+.card:nth-child(4) {
+    transform: rotateX(-30deg) rotateY(20deg) translateY(80px) translateX(80px);
+}
+
+/* move to the right */
+.card:nth-child(1).clicked {
+    transform: rotateX(-30deg) rotateY(20deg) translateY(20px) translateX(calc(20px + 100%));
+}
+.card:nth-child(2).clicked {
+    transform: rotateX(-30deg) rotateY(20deg) translateY(40px) translateX(calc(40px + 100%));
+}
+.card:nth-child(3).clicked {
+    transform: rotateX(-30deg) rotateY(20deg) translateY(60px) translateX(calc(60px + 100%));
+}
+.card:nth-child(4).clicked {
+    transform: rotateX(-30deg) rotateY(20deg) translateY(80px) translateX(calc(80px + 100%));
+}
+
+/* move to the front */
+.card:nth-child(1).double-clicked {
+    transform: translateX(150%) translateY(20px);
+}
+.card:nth-child(2).double-clicked {
+    transform: translateX(150%) translateY(40px);
+}
+.card:nth-child(3).double-clicked {
+    transform: translateX(150%) translateY(60px);
+}
+.card:nth-child(4).double-clicked {
+    transform: translateX(150%) translateY(80px);
+}

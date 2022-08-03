@@ -1,0 +1,72 @@
+/* Reset some of the default browser styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Change the font of the website */
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Set a background color for the site */
+body {
+  background-color: #eee;
+}
+
+h1 {
+  color: #444;
+  margin: 1rem 0;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+/* This is the container of our calculator */
+#calculator {
+  max-width: 350px;
+  margin: auto;
+  border-radius: 20px;
+  font-size: 2rem;
+  overflow: hidden;
+  /* We have a "overflow: hidden" here to help with setting the border radius (corner rounding) of our calculator. By just setting the border-radius, it would at first look like it didn't do anything. But this is because the content inside the calculator, such as .ouput and .buttons-container, overflows outside the calculator container and they do not have rounded corners. So by setting overflow: hidden, it just cuts those corners. */
+}
+
+/* The big red output section of the calculator. Whatever the user types in is going to display in here. */
+#calculator .output {
+  background-color: red;
+  color: #444;
+  padding: 1rem;
+  font-size: 2em;
+  font-weight: 900;
+  text-align: right;
+}
+
+/* Styling our buttons container into a grid container with 4 columns. */
+#calculator .buttons-container {
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.75rem;
+  padding: 1rem;
+}
+
+/* Styling the buttons of our calculator */
+#calculator .buttons-container button {
+  background-color: #eee;
+  color: #555;
+  width: 4rem;
+  aspect-ratio: 1 / 1 ; /* makes sure that our with and height of our buttons stays the same */
+  border: none;
+  border-radius: 100px;
+  font-size: inherit;
+  font-weight: bold;
+  cursor: pointer; /* changes our mouse cursor to a pointy finger */
+}
+
+/* Styling the '=' button to display as red. The equals button is the last button in the container that's why we're targeting it with our pseudo selector ':last-child' */
+#calculator .buttons-container button:last-child {
+  background-color: red;
+  color: #fff;
+}
